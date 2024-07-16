@@ -14,15 +14,36 @@
         <h1 id="text">Add quantity</h1>
 
         <div class="plusminus">
-               <img src="./plus.png" alt="img" id="btn">
+            <img src="./minus.png" alt="img" id="btn" onclick="decrement()">
 
               <p id="num"> 1 </p>
 
-               <img src="./minus.png" alt="img" id="btn">
+               
+               <img src="./plus.png" alt="img" id="btn" onclick="increment()">
         </div>
 
         <button id="buy">BUY NOW</button>
          
     </div>
+
+    <script>
+        function increment()
+        {
+            const product_quantity = document.getElementById("num");
+            
+            let quantity =parseInt(product_quantity.innerText);
+
+            product_quantity.innerText = ++quantity;
+        }
+
+        function decrement()
+        {
+            const product_quantity = document.getElementById("num");
+            
+            let quantity =parseInt(product_quantity.innerText);
+
+            product_quantity.innerText = --quantity;
+        }
+    </script>
 </body>
 </html>
