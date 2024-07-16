@@ -14,12 +14,12 @@
         <h1 id="text">Add quantity</h1>
 
         <div class="plusminus">
-            <img src="./minus.png" alt="img" id="btn" onclick="decrement()">
+            <img src="./minus.png" alt="img" id="btn" onclick="quantityhandle('dec')">
 
               <p id="num"> 1 </p>
 
                
-               <img src="./plus.png" alt="img" id="btn" onclick="increment()">
+               <img src="./plus.png" alt="img" id="btn" onclick="quantityhandle('inc')">
         </div>
 
         <button id="buy">BUY NOW</button>
@@ -27,23 +27,25 @@
     </div>
 
     <script>
-        function increment()
+        function quantityhandle(action)
         {
             const product_quantity = document.getElementById("num");
             
             let quantity =parseInt(product_quantity.innerText);
 
-            product_quantity.innerText = ++quantity;
-        }
+            if(action=='inc'){
+             product_quantity.innerText = ++quantity;
+            }
+            else{
+                product_quantity.innerText = --quantity; 
+            }
 
-        function decrement()
-        {
-            const product_quantity = document.getElementById("num");
+
             
-            let quantity =parseInt(product_quantity.innerText);
-
-            product_quantity.innerText = --quantity;
         }
+
+      
+      
     </script>
 </body>
 </html>
