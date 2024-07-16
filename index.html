@@ -33,13 +33,9 @@
             
             let quantity =parseInt(product_quantity.innerText);
 
-            if(action=='inc'){
-             product_quantity.innerText = ++quantity;
-            }
-            else{
-                product_quantity.innerText = --quantity; 
-            }
-
+            product_quantity.innerText= action=='inc'? ++quantity : --quantity
+             
+            
 
             
         }
