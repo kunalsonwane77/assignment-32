@@ -33,6 +33,16 @@
             
             let quantity =parseInt(product_quantity.innerText);
 
+            if (action=='dec'&& quantity==1){
+                alert('quantity can not be less than 1');
+                return
+            }
+            else if(action=='inc'&& quantity==5){
+                alert('quantity can not be more than 5');  
+                return
+            }
+
+
             product_quantity.innerText= action=='inc'? ++quantity : --quantity
              
             
